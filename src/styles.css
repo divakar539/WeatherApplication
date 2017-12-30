@@ -3,3 +3,20 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
+
+header{
+  background-color: #3498db;
+  padding : 30px;
+  width : 100%;
+  text-align: center;
+  font-size: 30px;
+  color : #f1c40f;
+}
+
+body{
+  padding: 0;
+  margin : 0;
+  font-family: "Roboto",Arial, sans-serif;
+  font-size: 16px;
+}
+

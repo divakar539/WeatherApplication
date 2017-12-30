@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Weather App</title>
+    </head>
+    <body>
+        <div class="col-lg-12 heading">
+        <h2>Weather in Top Cities of India</h2>
+        </div>
+
+        <div class="col-lg-offset-1 col-lg-9">
+        <table class="table-striped table-responsive">
+            <thead>
+              <th class="active">City Name</th>
+              <th>Description</th>
+              <th>Temperature <a (click)='sortList()'><span class="glyphicon glyphicon-arrow-down"></span></a>
+               <a (click)='sortByTempRev()'><span class="glyphicon glyphicon-arrow-up"></span></a>
+              </th>
+            </thead>
+            <tbody>
+                <ng-container *ngFor = "let cityWeather of weatherList">
+                <tr *ngIf ="weatherList" >
+                  <td>
+                    <a [routerLink]="['/WeatherInfo',cityWeather.id]">
+                        {{cityWeather.name}}
+                    </a>
+                  </td>
+                  <td>{{cityWeather.weather[0].description}}</td>
+                  <td>{{cityWeather.main.temp}}&#8451;</td>
+                </tr>
+               </ng-container>
+               <tr *ngIf="!weatherList">
+                  <td colspan = 3>Loading data.Please wait...</td>
+               </tr>
+            </tbody>
+        </table>
+      </div>
+    </body>
+</html>
